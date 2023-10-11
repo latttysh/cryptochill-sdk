@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./lib",
-    "strict": true,
-    "sourceMap": true
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "test", "lib", "**/*spec.ts"]
 }

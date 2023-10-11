@@ -29,9 +29,11 @@ export abstract class CryptochillBase {
         return crypto.createHmac('sha256', key).update(message).digest('hex')
     }
 
-    protected cryptochillApiRequest<T>(endpoint: string, payload?: any, method = "GET"): Promise<T> {
+    protected cryptochillApiRequest<T>(endpoint: string, payload = {}, method = "GET"): Promise<T> {
         const request_path = '/v1/' + endpoint + '/';
+        //@ts-ignore
         payload.request = request_path
+        //@ts-ignore
         payload.nonce = new Date().getTime()
         const encoded_payload = JSON.stringify(payload)
         const b64 = Base64.encode(encoded_payload)

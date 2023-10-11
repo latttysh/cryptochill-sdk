@@ -1,4 +1,4 @@
-export declare type Account = {
+export declare type AccountT = {
     id: string
     name: string
     is_testnet: boolean
