@@ -9,7 +9,7 @@ const endpoint = "automatic-conversions"
 export class AutoConversions extends CryptochillBase {
 
 
-    listAutoConversions() {
+    listAutoConversions(): Promise<AxiosResponse<{ result: AutoConversionT[] }>> {
         return this.cryptochillApiRequest(endpoint)
     }
 
