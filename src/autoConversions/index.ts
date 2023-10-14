@@ -2,6 +2,7 @@ import { CryptochillBase } from "src/base";
 import { AutoConversionT, CreateAutoConversionPayloadT, UpdateAutoConversionPayloadT } from "./types";
 import { AxiosResponse } from "axios";
 import { InvoiceT } from "src/invoices/invoicesTypes";
+import { ResultT } from "src/types";
 
 const endpoint = "automatic-conversions"
 
@@ -9,7 +10,7 @@ const endpoint = "automatic-conversions"
 export class AutoConversions extends CryptochillBase {
 
 
-    listAutoConversions(): Promise<AxiosResponse<{ result: AutoConversionT[] }>> {
+    listAutoConversions(): Promise<AxiosResponse<ResultT<AutoConversionT[]>>> {
         return this.cryptochillApiRequest(endpoint)
     }
 
@@ -17,11 +18,11 @@ export class AutoConversions extends CryptochillBase {
         return this.cryptochillApiRequest(endpoint + `/${id}`)
     }
 
-    createAutoConversions(payload: CreateAutoConversionPayloadT): Promise<AxiosResponse<{ result: AutoConversionT }>> {
+    createAutoConversions(payload: CreateAutoConversionPayloadT): Promise<AxiosResponse<ResultT<AutoConversionT>>> {
         return this.cryptochillApiRequest(endpoint, payload, "POST")
     }
 
-    updateAutoConversions(id: string, payload: UpdateAutoConversionPayloadT): Promise<AxiosResponse<{ result: AutoConversionT }>> {
+    updateAutoConversions(id: string, payload: UpdateAutoConversionPayloadT): Promise<AxiosResponse<ResultT<AutoConversionT>>> {
         return this.cryptochillApiRequest(endpoint + `/${id}`, payload, "PUT")
     }
 

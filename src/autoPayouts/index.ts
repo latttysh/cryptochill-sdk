@@ -1,21 +1,24 @@
+import { AxiosResponse } from "axios";
 import { CryptochillBase } from "src/base";
+import { ResultT } from "src/types";
+import { AutoPayoutT } from "./types";
 
 const endpoint = "automatic-payouts"
 
 export class AutomaticPayouts extends CryptochillBase {
-    listAutoPayouts = () => {
+    listAutoPayouts = (): Promise<AxiosResponse<ResultT<AutoPayoutT[]>>> => {
         return this.cryptochillApiRequest(endpoint)
     }
 
-    getAutoPayout = (id: string) => {
+    getAutoPayout = (id: string): Promise<AxiosResponse<ResultT<AutoPayoutT>>> => {
         return this.cryptochillApiRequest(endpoint + `/${id}`)
     }
 
-    createAutoPayout = (payload: any) => {
+    createAutoPayout = (payload: any): Promise<AxiosResponse<ResultT<AutoPayoutT>>> => {
         return this.cryptochillApiRequest(endpoint, payload, "POST")
     }
 
-    updateAutoPayout = (payload: any) => {
+    updateAutoPayout = (payload: any): Promise<AxiosResponse<ResultT<AutoPayoutT>>> => {
         return this.cryptochillApiRequest(endpoint, payload, "PUT")
     }
 
