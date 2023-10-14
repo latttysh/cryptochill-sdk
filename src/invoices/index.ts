@@ -1,4 +1,4 @@
-import { Axios, AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import { CryptochillBase } from "../base";
 import { CreateInvoicePayloadT, GetInvoicesParamsT, InvoiceListT, InvoiceT } from "./invoicesTypes";
 
