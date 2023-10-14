@@ -15,7 +15,7 @@ export abstract class CryptochillBase {
     private apiUrl: string;
     private profileId: string
     private apiSecret: string
-    private callbackToken: string | ""
+    public callbackToken: string | ""
 
     constructor(config: Config) {
         this.apiKey = config.apiKey
