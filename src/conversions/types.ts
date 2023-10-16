@@ -1,4 +1,4 @@
-import { WalletT } from "src/types"
+import { ExchangeT, WalletT } from "src/types"
 
 export declare type ConversionT = {
     id: string
@@ -7,10 +7,7 @@ export declare type ConversionT = {
     to_wallet: WalletT
     to_kind: string
     amount: string
-    exchange: {
-        id: string
-        title: string
-    }
+    exchange: ExchangeT
     status: string
     is_approved: boolean
 }

@@ -1,9 +1,8 @@
+import { WalletT } from "src/types"
+
 export declare type AutoPayoutT = {
     id: string
-    wallet: {
-        id: string
-        name: string
-    }
+    wallet: WalletT
     kind: string
     recipient_address: string
     is_enabled: boolean

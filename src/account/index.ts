@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { CryptochillBase } from "../base";
-import { AccountT } from "./accountTypes";
+import { AccountT } from "./types";
 import { ResultT } from "src/types";
 
 const endpoint = "account"

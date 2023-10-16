@@ -1,4 +1,7 @@
+import { AxiosResponse } from "axios";
 import { CryptochillBase } from "src/base";
+import { ResultT } from "src/types";
+import { PayoutConfirmationsT } from "./types";
 
 const endpoint = "payouts"
 
@@ -21,7 +24,7 @@ export class Payouts extends CryptochillBase {
 
     }
 
-    payoutConfirmations = (ids: string[]) => {
-        return this.cryptochillApiRequest(endpoint, { id: ids }, "POST")
+    payoutConfirmations = (ids: string[]): Promise<AxiosResponse<ResultT<PayoutConfirmationsT[]>>> => {
+        return this.cryptochillApiRequest(endpoint + "/confirmations/", { id: ids }, "POST")
     }
 }
